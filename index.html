@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scultra — Store (Template)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">Scultra</a>
+        <nav class="main-nav">
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Handmade Sculptures & Decor</h1>
+          <p>Unique art pieces for your home and office.</p>
+        </div>
+      </section>
+
+      <section id="products" class="product-section container">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/product-1.jpg" />
+            <h3>Marble Mini</h3>
+            <p class="price">$49.00</p>
+            <button class="btn add-to-cart">View</button>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/product-2.jpg" />
+            <h3>Abstract Bust</h3>
+            <p class="price">$89.00</p>
+            <button class="btn add-to-cart">View</button>
+          </article>
+
+          <article class="product-card">
+            <img src="assets/product-3.jpg" />
+            <h3>Modern Vase</h3>
+            <p class="price">$35.00</p>
+            <button class="btn add-to-cart">View</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="container about-section">
+        <h2>About Scultra</h2>
+        <p>We craft limited-run sculptures using sustainable materials.</p>
+      </section>
+
+      <section id="contact" class="container contact-section">
+        <h2>Contact Us</h2>
+
+        <form id="contactForm" class="contact-form">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button type="submit" class="btn primary">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Scultra — All rights reserved.</small>
+      </div>
+    </footer>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="popup">Message sent successfully!</div>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
