@@ -1,98 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Scultra — Store (Template)</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="logo" href="/">Scultra</a>
-        <nav class="main-nav">
-          <a href="#products">Products</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+<head>
+    <meta charset="UTF-8">
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <h1>Handmade Sculptures & Decor</h1>
-          <p>Unique art pieces for your home and office.</p>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <title>Team Girls VS Team Boys</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SETUP SCREEN
+    ========================== -->
+
+    <section id="setupScreen" class="setup-screen">
+
+        <div class="setup-box">
+
+            <div class="setup-logo">⚔</div>
+
+            <div class="small-title">
+                MORTAL KOMBAT STYLE
+            </div>
+
+            <h1>
+                TEAM
+                <span>BATTLE</span>
+            </h1>
+
+            <div class="mode-buttons">
+
+                <button class="mode-btn active">
+                    STREAMER
+                </button>
+
+                <button class="mode-btn">
+                    WATCH
+                </button>
+
+            </div>
+
+            <input
+                id="username"
+                type="text"
+                placeholder="@ Your username"
+            >
+
+            <button id="fightButton" class="fight-button">
+                FIGHT!
+            </button>
+
+            <div class="demo-option">
+
+                <input
+                    id="demoCheckbox"
+                    type="checkbox"
+                    checked
+                >
+
+                <span>
+                    DEMO MODE
+                    <small>(no TikTok connection)</small>
+                </span>
+
+            </div>
+
+            <div class="mapping-title">
+                GIFT MAPPING
+            </div>
+
+            <div class="gift-mapping">
+
+                <div class="mapping-card girls-card">
+                    <strong>GIRLS HIT</strong>
+                    <span>1 hit</span>
+                </div>
+
+                <div class="mapping-card girls-card">
+                    <strong>BRUTALITY</strong>
+                    <span>10 hits</span>
+                </div>
+
+                <div class="mapping-card boys-card">
+                    <strong>BOYS HIT</strong>
+                    <span>1 hit</span>
+                </div>
+
+                <div class="mapping-card boys-card">
+                    <strong>BRUTALITY</strong>
+                    <span>10 hits</span>
+                </div>
+
+            </div>
+
+            <div class="setup-footer">
+                20 HITS TO WIN
+            </div>
+
         </div>
-      </section>
 
-      <section id="products" class="product-section container">
-        <h2>Featured Products</h2>
-        <div class="product-grid">
-          <article class="product-card">
-            <img src="assets/product-1.jpg" />
-            <h3>Marble Mini</h3>
-            <p class="price">$49.00</p>
-            <button class="btn add-to-cart">View</button>
-          </article>
+    </section>
 
-          <article class="product-card">
-            <img src="assets/product-2.jpg" />
-            <h3>Abstract Bust</h3>
-            <p class="price">$89.00</p>
-            <button class="btn add-to-cart">View</button>
-          </article>
 
-          <article class="product-card">
-            <img src="assets/product-3.jpg" />
-            <h3>Modern Vase</h3>
-            <p class="price">$35.00</p>
-            <button class="btn add-to-cart">View</button>
-          </article>
+    <!-- =========================
+         BATTLE SCREEN
+    ========================== -->
+
+    <section
+        id="battleScreen"
+        class="battle-screen hidden"
+    >
+
+        <!-- =========================
+             16:9 ARENA
+        ========================== -->
+
+        <div
+            id="battleArena"
+            class="battle-arena"
+        >
+
+            <!-- BOYS IMAGE
+                 This is the bottom layer -->
+            <div
+                id="boysLayer"
+                class="fighter-image boys-layer"
+            ></div>
+
+
+            <!-- GIRLS IMAGE
+                 This is the top layer.
+                 Its clip boundary moves. -->
+            <div
+                id="girlsLayer"
+                class="fighter-image girls-layer"
+            ></div>
+
+
+            <!-- DARK OVERLAY -->
+            <div class="arena-overlay"></div>
+
+
+            <!-- CENTER DIVIDER -->
+            <div
+                id="centerDivider"
+                class="center-divider"
+            >
+
+                <div class="divider-glow"></div>
+
+            </div>
+
+
+            <!-- =========================
+                 TOP UI
+            ========================== -->
+
+            <div class="fighter-ui girls-ui">
+
+                <div
+                    id="girlsName"
+                    class="fighter-name girls-name"
+                >
+                    MILEENA
+                </div>
+
+                <div class="health-container">
+
+                    <div
+                        id="girlsHealth"
+                        class="health-bar girls-health"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="fighter-ui boys-ui">
+
+                <div
+                    id="boysName"
+                    class="fighter-name boys-name"
+                >
+                    SCORPION
+                </div>
+
+                <div class="health-container">
+
+                    <div
+                        id="boysHealth"
+                        class="health-bar boys-health"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEMO -->
+
+            <div
+                id="demoIndicator"
+                class="demo-indicator"
+            >
+                <span></span>
+                DEMO
+            </div>
+
+
+            <!-- ROUND -->
+
+            <div class="round-container">
+
+                <div id="roundText">
+                    ROUND 1
+                </div>
+
+                <div
+                    id="vsText"
+                    class="vs-text"
+                >
+                    VS
+                </div>
+
+            </div>
+
+
+            <!-- HIT TEXT -->
+
+            <div
+                id="hitText"
+                class="hit-text"
+            >
+                HIT!
+            </div>
+
+
+            <!-- BRUTALITY TEXT -->
+
+            <div
+                id="brutalityText"
+                class="brutality-text"
+            >
+                BRUTALITY!
+            </div>
+
+
+            <!-- WINNER -->
+
+            <div
+                id="winnerText"
+                class="winner-text"
+            >
+                GIRLS WIN!
+            </div>
+
+
+            <!-- PARTICLES -->
+
+            <div
+                id="particles"
+                class="particles"
+            ></div>
+
+
+            <!-- SECRET SETTINGS AREA -->
+
+            <button
+                id="secretSettings"
+                class="secret-settings"
+                aria-label="Settings"
+            ></button>
+
         </div>
-      </section>
 
-      <section id="about" class="container about-section">
-        <h2>About Scultra</h2>
-        <p>We craft limited-run sculptures using sustainable materials.</p>
-      </section>
 
-      <section id="contact" class="container contact-section">
-        <h2>Contact Us</h2>
+        <!-- =========================
+             CONTROLS
+        ========================== -->
 
-        <form id="contactForm" class="contact-form">
-          <label>
-            <span>Name</span>
-            <input type="text" name="name" required />
-          </label>
+        <div
+            id="battleControls"
+            class="battle-controls"
+        >
 
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" required />
-          </label>
+            <button
+                class="battle-button girls-button"
+                data-action="girls-hit"
+            >
+                GIRLS HIT
+            </button>
 
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" required></textarea>
-          </label>
+            <button
+                class="battle-button girls-brutality"
+                data-action="girls-brutality"
+            >
+                BRUTALITY!
+            </button>
 
-          <button type="submit" class="btn primary">Send Message</button>
-        </form>
-      </section>
-    </main>
+            <button
+                class="battle-button boys-button"
+                data-action="boys-hit"
+            >
+                BOYS HIT
+            </button>
 
-    <footer class="site-footer">
-      <div class="container">
-        <small>© <span id="year"></span> Scultra — All rights reserved.</small>
-      </div>
-    </footer>
+            <button
+                class="battle-button boys-brutality"
+                data-action="boys-brutality"
+            >
+                BRUTALITY!
+            </button>
 
-    <!-- Success Popup -->
-    <div id="successPopup" class="popup">Message sent successfully!</div>
+        </div>
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
-    <script src="script.js"></script>
-  </body>
+        <!-- SMALL OPTIONS BELOW CONTROLS -->
+
+        <div class="bottom-options">
+
+            <button id="restartButton">
+                ↻ RESTART
+            </button>
+
+            <button id="fullscreenButton">
+                ⛶ FULLSCREEN
+            </button>
+
+            <span>
+                20 HITS TO WIN
+            </span>
+
+        </div>
+
+
+        <!-- =========================
+             HIDDEN SETTINGS
+        ========================== -->
+
+        <aside
+            id="settingsPanel"
+            class="settings-panel"
+        >
+
+            <div class="settings-header">
+
+                <div>
+                    <small>PRIVATE ADMIN</small>
+
+                    <h2>
+                        Battle Settings
+                    </h2>
+                </div>
+
+                <button id="closeSettings">
+                    ×
+                </button>
+
+            </div>
+
+
+            <label>
+                Girls name
+
+                <input
+                    id="girlsNameInput"
+                    value="MILEENA"
+                >
+
+            </label>
+
+
+            <label>
+                Boys name
+
+                <input
+                    id="boysNameInput"
+                    value="SCORPION"
+                >
+
+            </label>
+
+
+            <label>
+                Sound
+
+                <input
+                    id="soundToggle"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+
+            <label>
+                Show controls
+
+                <input
+                    id="controlsToggle"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+
+            <label>
+                Demo indicator
+
+                <input
+                    id="demoToggle"
+                    type="checkbox"
+                    checked
+                >
+
+            </label>
+
+
+            <div class="settings-buttons">
+
+                <button id="resetButton">
+                    RESET
+                </button>
+
+                <button id="backButton">
+                    SETUP
+                </button>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
 </html>
